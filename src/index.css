@@ -68,3 +68,60 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+code {
+  counter-increment: step 0;
+  counter-reset: step;
+  display: inline-block;
+  min-width: 100%;
+}
+
+code .line::before {
+  color: white;
+  content: counter(step);
+  counter-increment: step;
+  display: inline-block;
+  margin-right: 16px;
+  text-align: right;
+  width: 3ch;
+}
+
+.line {
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  min-width: 100%;
+}
+
+.line ::after {
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 4px;
+}
+
+code .line.add {
+  background-color: #50fa7b30;
+}
+
+code .line.add::after {
+  background-color: #50fa7b;
+}
+
+code .line.delete {
+  background-color: #ff555530;
+}
+
+code .line.delete:after {
+  background-color: #ff5555;
+}
+
+code .line.highlight {
+  background-color: #8be9fd30;
+}
+
+code .line.highlight::after {
+  background-color: #8be9fd;
+}
